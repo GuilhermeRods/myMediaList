@@ -10,8 +10,8 @@
 
 ##### Passos para rodar o projeto:
 
-##### 1 Passo: instale as dependencias com `npm i`
+##### Passo 1: Instale as dependencias com `npm i`
 
-##### 2 Passo: configure sua env com a url do banco `postgres://user@password:host/database`
+##### Passo 2: Configure sua env com a url do banco `postgres://user@password:host/database`
 
-##### 3 Passo: para rodar o server `npm run dev`
+##### Passo 3: Para rodar o server `npm run dev`

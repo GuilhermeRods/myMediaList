@@ -1,7 +1,7 @@
 # myMidiaList
 #### Projeto do site que tem como proposta um ranking de séries, filmes e animes, baseado no rating dos usuários. Há também uma lista de favoritos do usuário e uma área para ver as midias.
 
-#### Back-end do projeto feito com Nodejs, utilizando [Koajs](https://koajs.com/), [Postgres](https://www.postgresql.org/), [Knex](http://knexjs.org/#Installation-node) e testes com [Jest](https://jestjs.io/pt-BR/) e [Supertest](https://github.com/visionmedia/supertest).
+#### Back-end do projeto feito com Nodejs, utilizando [Koajs](https://koajs.com/), [Postgres](https://www.postgresql.org/), [Knex](http://knexjs.org/#Installation-node) e testes com [Jest](https://jestjs.io/pt-BR/) e [Supertest](https://github.com/visionmedia/supertest). Fluxo de dados explicado [aqui](https://whimsical.com/6DcaGVNzinjE8fXvE42AUv).
 
 #### Front-end com [React](https://pt-br.reactjs.org/), [Styled-components](https://styled-components.com/docs/basics), [Styled-system](https://styled-system.com/) e [React-hook-form](https://react-hook-form.com/).
 

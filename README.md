@@ -21,6 +21,7 @@
 ```
 ├── /src
 |   ├── /controllers
+|   ├── /services
 |   ├── /database
 |   |    ├── /migrations
 |   |    ├── /seeds

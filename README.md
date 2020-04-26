@@ -15,3 +15,17 @@
 ##### Passo 2: Configure sua env com a url do banco `postgres://user@password:host/database`
 
 ##### Passo 3: Para rodar o server `npm run dev`
+
+#### Estrutura de pastas
+
+```
+├── /src
+|   ├── /controllers
+|   ├── /database
+|   |    ├── /migrations
+|   |    ├── /seeds
+|   ├── /repository-pattern
+|   ├── /routes
+|   ├── /validators
+├── /test
+```

@@ -25,7 +25,7 @@
 |   ├── /database
 |   |    ├── /migrations
 |   |    ├── /seeds
-|   ├── /repository-pattern
+|   ├── /repository
 |   ├── /routes
 |   ├── /validators
 ├── /test

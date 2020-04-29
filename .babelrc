@@ -7,9 +7,6 @@
         }]
     ],
     "plugins": [
-    //     ["babel-plugin-dotenv", {
-    //     "replacedModuleName": "babel-dotenv"
-    //  }],
      ["module-resolver", {
         "root": ["./src"],
         "alias": {

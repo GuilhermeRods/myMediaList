@@ -1,0 +1,48 @@
+{
+  "name": "mymedialist",
+  "version": "1.0.0",
+  "description": "#### Back-end do projeto feito com Nodejs, utilizando [Koajs](https://koajs.com/), [Postgres](https://www.postgresql.org/), [Knex](http://knexjs.org/#Installation-node) e testes com [Jest](https://jestjs.io/pt-BR/) e [Supertest](https://github.com/visionmedia/supertest). Fluxo de dados explicado [aqui](https://whimsical.com/6DcaGVNzinjE8fXvE42AUv).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js --exec babel-node --inspect src/index.js",
+    "build": "rimraf dist && babel src -s -D -d dist",
+    "start": "node dist",
+    "knex": "babel-node node_modules/.bin/knex --knexfile src/database/knexfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuilhermeRods/myMediaList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuilhermeRods/myMediaList/issues"
+  },
+  "homepage": "https://github.com/GuilhermeRods/myMediaList#readme",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-preset-env": "^1.7.0",
+    "dotenv": "^8.2.0",
+    "knex": "^0.21.1",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-jwt": "^3.6.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^8.0.8",
+    "path": "^0.12.7",
+    "pg": "^8.0.3",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "nodemon": "^2.0.3",
+    "prettier": "2.0.5",
+    "rimraf": "^3.0.2"
+  }
+}

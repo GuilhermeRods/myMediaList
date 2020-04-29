@@ -1,18 +1,24 @@
-const Koa = require('koa');
-const Router = require("koa-router");
-const router = new Router();
-const app = new Koa();
-const indexController = require('./controllers/index.js');
-const cors = require('@koa/cors');
-// const knex = require('../knexfile.js')
+import Koa from 'koa'
+import Cors from '@koa/cors'
+import Logger from 'koa-logger'
+import koaJwt from 'koa-jwt'
+import koaBody from 'koa-body'
+import routes from './routes'
+import { SECRET } from './config.js' 
 
-// console.log(route);
-router.use(indexController)
+const app = new Koa()
 
+app.use(Cors({ 
+  origin: '*',
+  allowMethods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'PATCH'],
+  exposeHeaders: ['X-Request-Id']} ))
 
-app.use(cors({origin: '*',
-allowMethods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'PATCH'],
-exposeHeaders: ['X-Request-Id']}))
-app.use(router.routes())
+app.use(Logger())
+app.use(koaBody({ multipart: true}))
 
-app.listen(3000,()=> console.log("Rodando!"));
+app.use(koaJwt({secret: SECRET}).unless({ path: ['/login', '/signup'] }))
+    
+app.use(routes.routes())
+app.use(routes.allowedMethods())
+
+export default app

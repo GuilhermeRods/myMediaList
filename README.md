@@ -3,7 +3,7 @@
 
 #### Back-end do projeto feito com Nodejs, utilizando [Koajs](https://koajs.com/), [Postgres](https://www.postgresql.org/), [Knex](http://knexjs.org/#Installation-node) e testes com [Jest](https://jestjs.io/pt-BR/) e [Supertest](https://github.com/visionmedia/supertest). Fluxo de dados explicado [aqui](https://whimsical.com/6DcaGVNzinjE8fXvE42AUv).
 
-#### Front-end com [React](https://pt-br.reactjs.org/), [Styled-components](https://styled-components.com/docs/basics), [Styled-system](https://styled-system.com/) e [React-hook-form](https://react-hook-form.com/).
+#### Front-end com [React](https://pt-br.reactjs.org/), [Styled-components](https://styled-components.com/docs/basics).
 
 #### Trello do projeto: [Trello](https://trello.com/b/g5JLhrEs/mymidialist-sprint-1)
 #### Telas do projeto: [Desktop](https://wesley739884.invisionapp.com/prototype/ck9efkmdw008ol50112om3y6f/play)

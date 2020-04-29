@@ -1,4 +1,3 @@
-
 import dotenv from 'dotenv'
 import path from 'path'
 
@@ -9,4 +8,5 @@ dotenv.config({
 export const NODE_ENV = process.env.NODE_ENV || 'development'
 export const SECRET = process.env.SECRET || 'supersecretkey'
 export const PORT = process.env.PORT || 3000
-export const DATABASE = process.env.DATABASE || 'postgress://user@password:host/database'
+export const DATABASE =
+  process.env.DATABASE || 'postgress://user@password:host/database'

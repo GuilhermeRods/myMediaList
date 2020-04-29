@@ -12,7 +12,7 @@
 
 ##### Passo 1: Instale as dependencias com `npm i`
 
-##### Passo 2: Configure sua env com a url do banco `postgres://user@password:host/database`
+##### Passo 2: Configure sua env com a url do banco `postgres://user:password@host/database`
 
 ##### Passo 3: Para rodar o server `npm run dev`
 

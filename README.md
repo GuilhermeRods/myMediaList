@@ -10,11 +10,11 @@
 
 ##### Passos para rodar o projeto:
 
-##### Passo 1: Instale as dependencias com `npm i`
+##### Passo 1: Instale as dependencias com `yarn`
 
 ##### Passo 2: Configure sua env com a url do banco `postgres://user:password@host/database`
 
-##### Passo 3: Para rodar o server `npm run dev`
+##### Passo 3: Para rodar o server `yarn dev`
 
 #### Estrutura de pastas
 

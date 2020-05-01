@@ -7,7 +7,7 @@
     "dev": "nodemon src/index.js --exec babel-node --inspect src/index.js",
     "build": "rimraf dist && babel src -s -D -d dist",
     "start": "node dist",
-    "knex": "babel-node node_modules/.bin/knex --knexfile src/database/knexfile.js"
+    "knex": "babel-node node_modules/knex/bin/cli.js --knexfile src/database/knexfile.js"
   },
   "repository": {
     "type": "git",

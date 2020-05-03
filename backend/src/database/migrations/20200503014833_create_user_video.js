@@ -4,7 +4,7 @@ export const up = knex => knex.schema.createTable('user_video', table => {
   table.integer('stopped_at').notNullable()
   table.integer('views')
 
-  table.string('user_id').notNullable()
+  table.uuid('user_id').notNullable()
   table.integer('video_id').notNullable()
 
   table.foreign('user_id').references('id').inTable('users')

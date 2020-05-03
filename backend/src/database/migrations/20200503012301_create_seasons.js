@@ -1,6 +1,6 @@
 export const up = knex => knex.schema.createTable('seasons', table => {
   table.increments()
-  table.string('number_season')
+  table.string('number_season').notNullable()
   table.text('description')
   table.timestamps(true, true)
   table.timestamp('deleted_at')

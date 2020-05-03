@@ -5,7 +5,7 @@ export const up = knex => knex.schema.createTable('user_media', table => {
   table.timestamps(true, true)
   table.timestamp('deleted_at')
 
-  table.integer('user_id').notNullable()
+  table.string('user_id').notNullable()
   table.integer('media_id').notNullable()
 
   table.foreign('user_id').references('id').inTable('users')

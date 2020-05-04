@@ -1,5 +1,7 @@
 
 export const up = knex => knex.schema.createTable('media_season', table => {
+  table.uuid('id').primary()
+
   table.uuid('media_id').notNullable()
   table.uuid('season_id').notNullable()
 

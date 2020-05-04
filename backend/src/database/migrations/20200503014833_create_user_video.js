@@ -1,5 +1,6 @@
 
 export const up = knex => knex.schema.createTable('user_video', table => {
+  table.uuid('id').primary()
 
   table.integer('stopped_at').notNullable()
   table.integer('views')

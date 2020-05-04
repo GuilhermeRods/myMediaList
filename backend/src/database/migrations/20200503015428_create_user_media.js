@@ -1,5 +1,6 @@
 
 export const up = knex => knex.schema.createTable('user_media', table => {
+  table.uuid('id').primary()
 
   table.integer('rating')
   table.timestamps(true, true)

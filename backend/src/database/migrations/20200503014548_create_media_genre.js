@@ -1,5 +1,7 @@
 
 export const up = knex => knex.schema.createTable('media_genre', table => {
+  table.uuid('id').primary()
+
   table.uuid('media_id').notNullable()
   table.uuid('genre_id').notNullable()
 

@@ -1,7 +1,7 @@
 
 export const up = knex => knex.schema.createTable('media_genre', table => {
-  table.integer('media_id').notNullable()
-  table.integer('genre_id').notNullable()
+  table.uuid('media_id').notNullable()
+  table.uuid('genre_id').notNullable()
 
   table.foreign('media_id').references('id').inTable('medias'),
   table.foreign('genre_id').references('id').inTable('genres')

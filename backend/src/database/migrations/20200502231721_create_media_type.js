@@ -1,6 +1,6 @@
 
 export const up = knex => knex.schema.createTable('media_type', table => {
-  table.increments()
+  table.uuid('id')
   table.string('type').notNullable()
   table.timestamps(true, true)
   table.timestamp('deleted_at')

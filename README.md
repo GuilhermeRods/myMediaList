@@ -14,6 +14,8 @@
 
 ##### Passo 2: Configure sua env com a url do banco `postgres://user:password@host/database`
 
+#### Passo 3: Adicione uma extensão no postgres `CREATE EXTENSION 'uuid-ossp'`
+
 ##### Passo 3: Para rodar o server `yarn dev`
 
 #### Estrutura de pastas

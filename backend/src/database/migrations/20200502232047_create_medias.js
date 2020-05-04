@@ -1,6 +1,6 @@
 
 export const up = knex => knex.schema.createTable('medias', table => {
-  table.uuid('id')
+  table.uuid('id').primary()
   table.string('title').notNullable()
   table.string('description').notNullable()
   table.integer('total_rating')

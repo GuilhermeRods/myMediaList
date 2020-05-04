@@ -1,5 +1,5 @@
 export const up = knex => knex.schema.createTable('videos', table => {
-  table.uuid('id')
+  table.uuid('id').primary()
   table.string('title').notNullable()
   table.integer('video_number').notNullable()
   table.timestamps(true, true)

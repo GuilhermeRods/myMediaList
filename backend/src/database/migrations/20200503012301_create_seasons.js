@@ -1,5 +1,5 @@
 export const up = knex => knex.schema.createTable('seasons', table => {
-  table.uuid('id')
+  table.uuid('id').primary()
   table.string('number_season').notNullable()
   table.text('description').notNullable()
   table.timestamps(true, true)

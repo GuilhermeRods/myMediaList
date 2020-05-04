@@ -1,9 +1,10 @@
 
 export const up = knex => knex.schema.createTable('user_video', table => {
   table.uuid('id').primary()
-
   table.integer('stopped_at').notNullable()
   table.integer('views')
+  table.timestamps(true, true)
+  table.timestamp('deleted_at')
 
   table.uuid('user_id').notNullable()
   table.uuid('video_id').notNullable()

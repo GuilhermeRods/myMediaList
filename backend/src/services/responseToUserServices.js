@@ -1,3 +1,10 @@
+export const sendSucess = (ctx, message) => {
+  ctx.body = {
+    message
+  }
+  ctx.status = 200
+}
+
 export const sendCreated = (ctx, message) => {
   ctx.body = {
     message

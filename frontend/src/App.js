@@ -1,12 +1,15 @@
-import { Title } from './styles'
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 
-function App  () {
-    return (
-      <div>
-        <Title>Oi pâmela</Title>
-      </div>
-    );
+import './global.css'
+
+import UnauthenticatedApp from './UnauthenticatedApp'
+
+const App = () => {
+  return (
+
+   <UnauthenticatedApp/>
+
+  )
 }
 
-export default App;
+export default App

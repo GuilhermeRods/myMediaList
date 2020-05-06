@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 
 import './global.css'
 
-import Routes from './routes/routes'
+import UnauthenticatedApp from './UnauthenticatedApp'
 
 const App = () => {
   return (
-    <Routes />
+
+   <UnauthenticatedApp/>
+
   )
 }
 

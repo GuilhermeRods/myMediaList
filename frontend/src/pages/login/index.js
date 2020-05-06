@@ -1,24 +1,28 @@
 import React, { useState } from 'react'
 
-import Modal from '../modal'
 
-import './styles.css'
 import Register from '../register'
-
-import { Button } from '../../global'
+import styled from 'styled-components'
+import { Button, Modal } from '../../components'
 
 const Home = () => {
   const [isModelVisible, setIsModelVisible] = useState(false)
   return (
 
-    <div className='container'>
-      <Button primary onClick={() => setIsModelVisible(true)}>CADASTRE-SE AQUI </Button>
-      <div className='content'>
+    <Container>
+      <Button primary width='big' height='regular' onClick={() => setIsModelVisible(true)}>CADASTRE-SE AQUI </Button>
         {isModelVisible ? <Modal onClose={() => setIsModelVisible(false)}><Register /></Modal> : null}
-      </div>
-    </div>
+   </Container>
 
   )
 }
+
+const Container = styled.div`
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+`
+
 
 export default Home

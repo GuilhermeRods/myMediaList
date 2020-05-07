@@ -4,7 +4,7 @@ import {
   sendErrorBadRequest
 } from '../services/responseToUserServices'
 
-const UserController = {
+const MediaController = {
   create: async ctx => {
     const { body } = ctx.request
     const fields = {
@@ -23,4 +23,4 @@ const UserController = {
   }
 }
 
-export default UserController
+export default MediaController

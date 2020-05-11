@@ -1,13 +1,14 @@
 import React, { lazy, Suspense } from 'react'
 
+
 import './global.css'
 
-import UnauthenticatedApp from './UnauthenticatedApp'
+import IsNotAuthenticated from './IsNotAuthenticated'
 
 const App = () => {
   return (
 
-   <UnauthenticatedApp/>
+   <IsNotAuthenticated/>
 
   )
 }

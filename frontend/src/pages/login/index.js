@@ -5,7 +5,7 @@ import Register from '../register'
 import styled from 'styled-components'
 import { Button, Modal } from '../../components'
 
-const Home = () => {
+const Login = () => {
   const [isModelVisible, setIsModelVisible] = useState(false)
   return (
 
@@ -25,4 +25,4 @@ const Container = styled.div`
 `
 
 
-export default Home
+export default Login

@@ -3,3 +3,8 @@ export * from './Input'
 export * from './Modal'
 export * from './Icons/Close'
 export * from './Row'
+export * from './Menu'
+export * from './RoundedButton'
+export * from './Line'
+export * from './Rating'
+

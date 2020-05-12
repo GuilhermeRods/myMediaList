@@ -1,4 +1,5 @@
 import { insertUserOnDB } from '../services/usersServices'
+import { generatePasswordHashed } from '../services/bcrypt'
 import {
   sendCreated,
   sendErrorBadRequest
@@ -10,11 +11,16 @@ const UserController = {
     const fields = {
       name: body.name,
       email: body.email,
-      password: body.password,
+      password: body.generatePasswordHashed(password)
     }
     try {
-      const response = await insertUserOnDB({ ...fields })
-      sendCreated(ctx, response)
+      const verifyEmail = await insertUserOnDB('users')
+                                .where('email', email)
+                                .first()
+      if(!verifyEmail) {
+        const response = await insertUserOnDB({ ...fields })
+        sendCreated(ctx, response)
+      }
     } catch (err) {
       const message = 'User could not be created, please try again'
       sendErrorBadRequest(ctx, message, err)

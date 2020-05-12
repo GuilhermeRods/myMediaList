@@ -7,4 +7,4 @@ export * from './Menu'
 export * from './RoundedButton'
 export * from './Line'
 export * from './Rating'
-
+export * from './SecondaryMenu'

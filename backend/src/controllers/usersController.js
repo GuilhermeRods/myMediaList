@@ -11,7 +11,7 @@ const UserController = {
     const fields = {
       name: body.name,
       email: body.email,
-      password: body.generatePasswordHashed(password)
+      password: generatePasswordHashed(body.password)
     }
     try {
       const verifyEmail = await insertUserOnDB('users')

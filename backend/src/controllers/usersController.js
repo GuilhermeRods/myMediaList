@@ -1,5 +1,5 @@
 import { insertUserOnDB } from '../services/usersServices'
-import { generatePasswordHashed } from '../services/bcrypt'
+import { generatePasswordHashed } from '../services/bcrypt-services'
 import {
   sendCreated,
   sendErrorBadRequest

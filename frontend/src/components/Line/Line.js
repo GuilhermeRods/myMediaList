@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Line = styled.div`
+  margin: auto;
   width: 70%;
   height: 2px;
   background: rgb(0, 0, 0);

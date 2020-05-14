@@ -13,11 +13,7 @@ const SecondaryMenuComponent = () => (
 )
 
 const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 5vh;
-  justify-content: center;
-  align-items: center;
+  background-color: #050915;
 `
 
 const Items = styled.a`
@@ -27,11 +23,7 @@ const Items = styled.a`
   padding: 25px 0;
   color: aliceblue;
   text-decoration: none;
-
-  :hover {
-    transition: 0.5s;
-    text-shadow: 0px 0px 10px #fff;
-  }
+  font-size: 14px;
 
   &:after {
     content: '';
@@ -58,8 +50,9 @@ const Items = styled.a`
 const MenuItems = styled.div`
   color: white;
   display: flex;
-  width: 60vw;
+  width: 68%;
   justify-content: space-between;
+  margin: auto;
 `
 
 export default SecondaryMenuComponent

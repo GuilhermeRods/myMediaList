@@ -10,8 +10,8 @@ const MediaController = {
     const fields = {
       title: body.title,
       description: body.description,
-      total_rating: body.total_rating,
-      media_type_id: body.media_type_id
+      total_rating: body.totalRating,
+      media_type_id: body.mediaTypeId
     }
     try {
       const response = await insertMediaOnDB({ ...fields })

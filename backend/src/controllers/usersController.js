@@ -1,4 +1,4 @@
-import { insertUserOnDB } from '../services/usersServices'
+import { insertUserOnDB, getUser } from '../services/usersServices'
 import { generatePasswordHashed } from '../services/bcrypt-services'
 import {
   sendCreated,
@@ -14,10 +14,9 @@ const UserController = {
       password: generatePasswordHashed(body.password)
     }
     try {
-      const verifyEmail = await insertUserOnDB('users')
-                                .where('email', email)
-                                .first()
-      if(!verifyEmail) {
+      const verifyEmail = await getUser({ ...fields })
+
+      if(verifyEmail) {
         const response = await insertUserOnDB({ ...fields })
         sendCreated(ctx, response)
       }

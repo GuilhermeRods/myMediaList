@@ -1,6 +1,4 @@
-import {
-  validateUserByEmail
-} from '../services/loginService'
+import { validateUserByEmail } from '../services/loginService'
 import {
   sendSucess,
   sendErrorBadRequest
@@ -9,26 +7,19 @@ import generateToken from '../services/AuthJwtService'
 
 const loginController = {
   login: async ctx => {
-    const {
-      body
-    } = ctx.request
+    const { body } = ctx.request
     try {
-      const response = await validateUserByEmail(body.email, body.password);
-      const token = await generateToken(response.id);
-
+      const response = await validateUserByEmail(body.email, body.password)
+      const token = await generateToken(response.id)
 
       sendSucess(ctx, {
         ...response,
         token
       })
-
     } catch (error) {
-      sendErrorBadRequest(ctx, error);
-
+      sendErrorBadRequest(ctx, error)
     }
   }
-
 }
 
-
-export default loginController;
+export default loginController

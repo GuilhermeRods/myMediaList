@@ -20,7 +20,7 @@ app.use(Logger())
 app.use(koaBody({ multipart: true }))
 
 app.use(
-  koaJwt({ secret: SECRET }).unless({ path: ['/login', '/signup', '/medias'] })
+  koaJwt({ secret: SECRET }).unless({ path: ['/login', '/signup', '/medias', '/users'] })
 )
 
 app.use(routes.routes())

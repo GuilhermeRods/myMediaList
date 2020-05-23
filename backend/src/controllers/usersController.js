@@ -1,7 +1,8 @@
-import { insertUserOnDB } from '../services/usersServices'
+import { insertUserOnDB, getUserById } from '../services/usersServices'
 import {
   sendCreated,
-  sendErrorBadRequest
+  sendErrorBadRequest,
+  sendSucess
 } from '../services/responseToUserServices'
 
 const UserController = {
@@ -13,11 +14,21 @@ const UserController = {
       password: body.password
     }
     try {
-        const response = await insertUserOnDB({ ...fields })
-        sendCreated(ctx, response)
+      const response = await insertUserOnDB({
+        ...fields
+      })
+      sendCreated(ctx, response)
     } catch (err) {
       const message = 'User could not be created, please try again'
       sendErrorBadRequest(ctx, message, err)
+    }
+  },
+  show: async ctx => {
+    try {
+      const response = await getUserById(ctx.params.id)
+      sendSucess(ctx, response)
+    } catch (error) {
+      sendErrorBadRequest(ctx, error)
     }
   }
 }

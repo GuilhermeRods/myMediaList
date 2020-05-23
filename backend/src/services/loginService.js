@@ -1,14 +1,24 @@
-import {connectionDev} from '../database/connect'
+import { connectionDev } from '../database/connect'
+import { verifyPassword } from '../services/bcrypt-services'
 
- export const validateUserByEmail = async (email,password) => {
-  const userEmail = await connectionDev('users').select('email','id').where({email,password}).first()
-
-  if(!userEmail){
-    throw "Email ou Senha não correspondem"
+export const validateUserByEmail = async (currentEmail, currentPassword) => {
+  if (!currentPassword || !currentEmail) {
+    throw 'Preencha todos os campos'
   }
 
+  const { id, email, password } = await connectionDev('users')
+    .select('email', 'id', 'password')
+    .where({ email: currentEmail })
+    .first()
 
-  return userEmail;
+  if (!email) {
+    throw 'Email ou Senha não correspondem'
+  }
 
+  const isValid = verifyPassword(currentPassword, password)
+  if (!isValid) {
+    throw 'Email ou Senha não correspondem'
+  }
 
+  return { id, email }
 }

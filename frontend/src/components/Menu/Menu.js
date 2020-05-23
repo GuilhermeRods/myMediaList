@@ -3,46 +3,41 @@ import styled from 'styled-components'
 import * as Icon from 'react-feather'
 
 const MenuComponet = () => (
-  <Content>
-    <Menu>
-      <Logo>
-        <Items>LOGO</Items>
-      </Logo>
-      <MenuItems>
-        <Items>FILMES</Items>
-        <Items>SERIES</Items>
-        <Items>ANIMES</Items>
-      </MenuItems>
-      <Login>
-        <Items>
-          <Icon.LogIn />
-        </Items>
-      </Login>
-    </Menu>
-  </Content>
+  <Menu>
+    <Logo>
+      <Items>LOGO</Items>
+    </Logo>
+    <MenuItems>
+      <Items>FILMES</Items>
+      <Items>SERIES</Items>
+      <Items>ANIMES</Items>
+    </MenuItems>
+    <Login>
+      <Items>
+        <Icon.LogIn />
+      </Items>
+    </Login>
+  </Menu>
 )
-
-const Content = styled.div`
-  display: flex;
-  justify-content: center;
-`
 
 const Menu = styled.div`
   display: flex;
   height: 5vh;
   align-items: center;
   padding: 25px 0;
-  color: aliceblue;
+  color: rgba(255, 255, 255, 0.5);
 `
 
 const Logo = styled.div`
+  display: flex;
   width: 25vw;
   padding-left: 5vw;
+  justify-content: flex-start;
 `
 
 const MenuItems = styled.div`
   display: flex;
-  width: 40vw;
+  width: 30vw;
   justify-content: space-between;
 `
 
@@ -55,10 +50,10 @@ const Login = styled.div`
 
 const Items = styled.p`
   cursor: pointer;
-  letter-spacing: 1.5px;
+  margin: 0px 5px;
   :hover {
     transition: 0.5s;
-    text-shadow: 0px 0px 10px #fff;
+    color: rgba(255, 255, 255);
   }
 `
 

@@ -22,10 +22,16 @@ const Register = () => {
           <Input name='name' placeholder='NOME' />
           <Input name='password' placeholder='SENHA' />
           <Input name='repeatPassword' placeholder='REPITA A SENHA' />
-          <Button width='biggest' primary height='regular'>
+          <Button
+            width='large'
+            primary
+            height='large'
+            borderRadius='regular'
+            marginSize='10px 0px 0px'
+          >
             REGISTRAR CONTA
           </Button>
-          <Button width='biggest' height='regular'>
+          <Button width='large' height='large' borderRadius='regular' marginSize='10px 0px 0px'>
             LOGIN
           </Button>
         </form>

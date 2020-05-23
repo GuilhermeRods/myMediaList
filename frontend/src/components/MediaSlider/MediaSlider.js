@@ -42,32 +42,37 @@ const MediaSliderComponent = () => {
     ]
   }
 
+  const images = [
+    {
+      image: shingeki
+    },
+    {
+      image: shingeki
+    },
+    {
+      image: shingeki
+    },
+    {
+      image: shingeki
+    },
+    {
+      image: shingeki
+    },
+    {
+      image: shingeki
+    }
+  ]
+
   return (
     <Content>
       <SliderShow>
         <TitleCategory>FILMES</TitleCategory>
         <Slider {...settings}>
-          <div>
-            <Image src={shingeki} />
-          </div>
-          <div>
-            <Image src={shingeki} />
-          </div>
-          <div>
-            <Image src={shingeki} />
-          </div>
-          <div>
-            <Image src={shingeki} />
-          </div>
-          <div>
-            <Image src={shingeki} />
-          </div>
-          <div>
-            <Image src={shingeki} />
-          </div>
-          <div>
-            <Image src={shingeki} />
-          </div>
+          {images.map((i) => (
+            <div>
+              <Image src={i.image} />
+            </div>
+          ))}
         </Slider>
       </SliderShow>
     </Content>

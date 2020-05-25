@@ -1,5 +1,5 @@
 export const up = knex =>
-  knex.schema.createTable('user_media', table => {
+  knex.schema.createTable('user_medias', table => {
     table.uuid('id').defaultTo(knex.raw('uuid_generate_v4()')).primary()
 
     table.integer('rating')
@@ -13,4 +13,4 @@ export const up = knex =>
     table.foreign('media_id').references('id').inTable('medias')
   })
 
-export const down = knex => knex.schema.dropTable('user_media')
+export const down = knex => knex.schema.dropTable('user_medias')

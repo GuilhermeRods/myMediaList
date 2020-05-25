@@ -1,5 +1,5 @@
 export const up = knex =>
-  knex.schema.createTable('media_genre', table => {
+  knex.schema.createTable('media_genres', table => {
     table.uuid('id').defaultTo(knex.raw('uuid_generate_v4()')).primary()
     table.timestamps(true, true)
     table.timestamp('deleted_at')
@@ -11,4 +11,4 @@ export const up = knex =>
     table.foreign('genre_id').references('id').inTable('genres')
   })
 
-export const down = knex => knex.schema.dropTable('media_genre')
+export const down = knex => knex.schema.dropTable('media_genres')

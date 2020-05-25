@@ -27,7 +27,6 @@
 |   ├── /database
 |   |    ├── /migrations
 |   |    ├── /seeds
-|   ├── /repository
 |   ├── /routes
 |   ├── /validators
 ├── /test

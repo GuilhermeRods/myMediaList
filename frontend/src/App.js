@@ -1,15 +1,11 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 
 import './global.css'
 
-import UnauthenticatedApp from './UnauthenticatedApp'
+import IsNotAuthenticated from './IsNotAuthenticated'
 
 const App = () => {
-  return (
-
-   <UnauthenticatedApp/>
-
-  )
+  return <IsNotAuthenticated />
 }
 
 export default App

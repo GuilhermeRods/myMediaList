@@ -11,6 +11,7 @@
     "react/jsx-boolean-value": [0],
     "react-hooks/rules-of-hooks": "error",
     "prettier/prettier": 2,
-    "space-before-function-paren": 0
+    "space-before-function-paren": 0,
+    "no-unused-vars": 0
   }
 }

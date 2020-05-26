@@ -15,9 +15,12 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-slick": "^0.26.1",
+    "slick-carousel": "^1.8.1",
     "standard": "^14.3.3",
     "styled-components": "^5.1.0"
   },

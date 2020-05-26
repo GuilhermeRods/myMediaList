@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const RowComponent = ({ children}) => {
+const RowComponent = ({ children }) => {
   return (
   <Row>{children}</Row>
   )

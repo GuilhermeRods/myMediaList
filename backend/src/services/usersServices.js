@@ -14,7 +14,7 @@ export const insertUserOnDB = async fields => {
 export const getUser = async fields =>
   connectionDev('users').select('id').where({
     fields
-  })
+})
 
 export const getUserById = async id => {
   const user = await connectionDev('users')
@@ -24,8 +24,18 @@ export const getUserById = async id => {
     })
     .first()
   if (!user) {
-    throw 'Id não correspondem a um usuario cadastrado !'
+    throw 'User does not exist !'
   }
 
   return user
+}
+
+export const deleteUserById = async id  =>{
+  const user = await connectionDev('users')
+    .where({id})
+    .update({ deleted_at: new Date() })
+  if(!user){
+    throw 'User does not exist !'
+  }
+  return user;
 }

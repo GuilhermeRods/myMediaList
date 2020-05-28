@@ -1,4 +1,4 @@
-import { insertUserOnDB, getUserById } from '../services/usersServices'
+import { insertUserOnDB, getUserById, deleteUserById } from '../services/usersServices'
 import {
   sendCreated,
   sendErrorBadRequest,
@@ -30,7 +30,16 @@ const UserController = {
     } catch (error) {
       sendErrorBadRequest(ctx, error)
     }
+  },
+  destroy: async ctx => {
+    try {
+      await deleteUserById(ctx.params.id)
+      sendSucess(ctx, 'Successfully deleted.')
+    } catch (error) {
+      sendErrorBadRequest(ctx, error)
+    }
   }
+
 }
 
 export default UserController

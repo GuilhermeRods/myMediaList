@@ -1,8 +1,16 @@
-import { connectionDev } from '../database/connect'
-import { generatePasswordHashed } from '../services/bcrypt-services'
+import {
+  connectionDev
+} from '../database/connect'
+import {
+  generatePasswordHashed
+} from '../services/bcrypt-services'
 
 export const insertUserOnDB = async fields => {
-  const { name, email, password } = fields
+  const {
+    name,
+    email,
+    password
+  } = fields
   if (!name || !email || !password) throw 'incorrects data'
   const passwordHashed = generatePasswordHashed(password)
   return connectionDev('users').returning('*').insert({
@@ -14,7 +22,7 @@ export const insertUserOnDB = async fields => {
 export const getUser = async fields =>
   connectionDev('users').select('id').where({
     fields
-})
+  })
 
 export const getUserById = async id => {
   const user = await connectionDev('users')
@@ -30,12 +38,28 @@ export const getUserById = async id => {
   return user
 }
 
-export const deleteUserById = async id  =>{
+export const deleteUserById = async id => {
   const user = await connectionDev('users')
-    .where({id})
-    .update({ deleted_at: new Date() })
-  if(!user){
+    .where({
+      id
+    })
+    .update({
+      deleted_at: new Date()
+    })
+  if (!user) {
     throw 'User does not exist !'
   }
   return user;
+}
+
+export const getUsersAllActive = async () => {
+  const users = await connectionDev('users')
+    .select('id', 'name', 'email')
+    .whereNull('deleted_at')
+
+  if (users.length == 0) {
+    throw 'There are no users !'
+  }
+
+  return users
 }

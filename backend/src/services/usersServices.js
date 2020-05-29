@@ -29,3 +29,13 @@ export const getUserById = async id => {
 
   return user
 }
+
+export const updateUserOnDB = async (id, fields) => {
+  const { name, email, password } = fields
+  const passwordHashed = generatePasswordHashed(password)
+  return connectionDev('users').where({ id }).update({
+    name,
+    email,
+    password: passwordHashed
+  })
+}

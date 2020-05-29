@@ -21,7 +21,7 @@ app.use(koaBody({ multipart: true }))
 
 app.use(
   koaJwt({ secret: SECRET }).unless({
-    path: ['/login', '/signup', '/medias', '/users']
+    path: ['/login', '/medias', '/users', '/users/signup', '/users/edit']
   })
 )
 

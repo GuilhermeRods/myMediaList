@@ -7,6 +7,8 @@
 
 #### Trello do projeto: [Trello](https://trello.com/b/g5JLhrEs/mymidialist-sprint-1)
 #### Telas do projeto: [Desktop](https://wesley739884.invisionapp.com/prototype/ck9efkmdw008ol50112om3y6f/play)
+#### Diagrama do Banco [Dbdiagram.io](https://dbdiagram.io/d/5ec5b08039d18f5553ff874a)
+
 
 ##### Passos para rodar o projeto:
 

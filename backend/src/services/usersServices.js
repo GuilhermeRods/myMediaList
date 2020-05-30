@@ -32,10 +32,12 @@ export const getUserById = async id => {
 
 export const updateUserOnDB = async (id, fields) => {
   const { name, email, password } = fields
+  if (name === "" || email === "" || password === "") throw 'incorrects data'
   const passwordHashed = generatePasswordHashed(password)
   return connectionDev('users').where({ id }).update({
     name,
     email,
-    password: passwordHashed
+    password: passwordHashed,
+    updated_at: new Date()
   })
 }

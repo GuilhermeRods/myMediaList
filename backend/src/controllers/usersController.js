@@ -46,7 +46,7 @@ const UserController = {
       sendErrorBadRequest(ctx, error)
     }
   },
-  showUsers: async ctx => {
+  index: async ctx => {
     try {
       const response = await getAllUsers()
       sendSucess(ctx, response)

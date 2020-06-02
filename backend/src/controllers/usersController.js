@@ -2,7 +2,7 @@ import {
   insertUserOnDB,
   getUserById,
   deleteUserById,
-  getUsersAllActive
+  getAllUsers
 } from '../services/usersServices'
 import {
   sendCreated,
@@ -48,7 +48,7 @@ const UserController = {
   },
   showUsers: async ctx => {
     try {
-      const response = await getUsersAllActive()
+      const response = await getAllUsers()
       sendSucess(ctx, response)
     } catch (error) {
       sendErrorBadRequest(ctx, error)

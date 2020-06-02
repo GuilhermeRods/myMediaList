@@ -52,12 +52,12 @@ export const deleteUserById = async id => {
   return user;
 }
 
-export const getUsersAllActive = async () => {
+export const getAllUsers = async () => {
   const users = await connectionDev('users')
     .select('id', 'name', 'email')
     .whereNull('deleted_at')
 
-  if (users.length == 0) {
+  if (!users.length) {
     throw 'There are no users !'
   }
 

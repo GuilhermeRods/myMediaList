@@ -27,7 +27,7 @@ app.use(
   })
 )
 
-cron.schedule('* * * * *', animeCron)
+cron.schedule('0 3 * * *', animeCron)
 
 app.use(routes.routes())
 app.use(routes.allowedMethods())

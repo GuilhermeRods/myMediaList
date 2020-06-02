@@ -5,6 +5,8 @@ import koaJwt from 'koa-jwt'
 import koaBody from 'koa-body'
 import routes from './routes'
 import { SECRET } from './config.js'
+import { animeCron } from '../src/services/cronServices'
+import cron from 'node-cron'
 
 const app = new Koa()
 
@@ -24,6 +26,8 @@ app.use(
     path: ['/login', 'users/signup']
   })
 )
+
+cron.schedule('0 3 * * *', animeCron)
 
 app.use(routes.routes())
 app.use(routes.allowedMethods())

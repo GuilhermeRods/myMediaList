@@ -5,6 +5,9 @@ export const up = knex =>
     table.integer('video_number').notNullable()
     table.timestamps(true, true)
     table.timestamp('deleted_at')
+    table.string('image')
+    table.text('description')
+    table.datetime('airdate')
 
     table.uuid('media_id').notNullable()
 

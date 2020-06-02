@@ -1,5 +1,5 @@
 export const up = knex =>
-  knex.schema.createTable('user_video', table => {
+  knex.schema.createTable('user_videos', table => {
     table.uuid('id').defaultTo(knex.raw('uuid_generate_v4()')).primary()
     table.integer('stopped_at').notNullable()
     table.integer('views')
@@ -13,4 +13,4 @@ export const up = knex =>
     table.foreign('video_id').references('id').inTable('videos')
   })
 
-export const down = knex => knex.schema.dropTable('user_video')
+export const down = knex => knex.schema.dropTable('user_videos')

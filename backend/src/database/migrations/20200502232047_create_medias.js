@@ -7,6 +7,11 @@ export const up = knex =>
     table.integer('total_rating')
     table.timestamps(true, true)
     table.timestamp('deleted_at')
+    table.string('image_poster')
+    table.string('image_cover')
+    table.string('youtube_id')
+    table.datetime('start_date')
+    table.datetime('end_date')
 
     table.uuid('media_type_id').notNullable()
 

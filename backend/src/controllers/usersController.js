@@ -1,4 +1,9 @@
-import { insertUserOnDB, getUserById, deleteUserById } from '../services/usersServices'
+import {
+  insertUserOnDB,
+  getUserById,
+  deleteUserById,
+  getAllUsers
+} from '../services/usersServices'
 import {
   sendCreated,
   sendErrorBadRequest,
@@ -7,7 +12,9 @@ import {
 
 const UserController = {
   create: async ctx => {
-    const { body } = ctx.request
+    const {
+      body
+    } = ctx.request
     const fields = {
       name: body.name,
       email: body.email,
@@ -38,7 +45,18 @@ const UserController = {
     } catch (error) {
       sendErrorBadRequest(ctx, error)
     }
-  }
+  },
+  index: async ctx => {
+    try {
+      const response = await getAllUsers()
+      sendSucess(ctx, response)
+    } catch (error) {
+      sendErrorBadRequest(ctx, error)
+    }
+  },
+
+
+
 
 }
 

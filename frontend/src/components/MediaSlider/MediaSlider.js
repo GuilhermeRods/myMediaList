@@ -10,36 +10,7 @@ const MediaSliderComponent = () => {
     infinite: true,
     speed: 1000,
     slidesToShow: 5,
-    swipeToSlide: true,
-    focusOnSelect: true,
-    responsive: [
-      {
-        breakpoint: 1500,
-        settings: {
-          slidesToShow: 4
-        }
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 1000,
-        settings: {
-          slidesToShow: 2,
-          centerMode: true
-        }
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-          centerMode: true
-        }
-      }
-    ]
+    arrows: false
   }
 
   const images = [
@@ -69,9 +40,10 @@ const MediaSliderComponent = () => {
         <TitleCategory>FILMES</TitleCategory>
         <Slider {...settings}>
           {images.map((i) => (
-            <div>
-              <Image src={i.image} />
-            </div>
+            <Card>
+              <Overlap />
+              <Image variant='top' src={i.image} />
+            </Card>
           ))}
         </Slider>
       </SliderShow>
@@ -81,23 +53,44 @@ const MediaSliderComponent = () => {
 
 const Content = styled.div`
   display: flex;
-  width: 100%;
   justify-content: center;
-  background-color: #050915;
+  width: 100%;
+  height: 100vh;
+  background-color: #050913;
+
+  .slick-slide {
+    width: 160px;
+  }
+`
+
+const Card = styled.div`
+  width: 150px;
+  height: 200px;
+  position: relative;
+`
+
+const Overlap = styled.div`
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  border-radius: 8px;
+  transition: 0.5s;
+  :hover {
+    background-color: #03060ed1;
+  }
 `
 
 const Image = styled.img`
   background-size: cover;
-  border-radius: 10px;
-  width: 12em;
-  height: 16em;
-  margin: 10px;
+  border-radius: 8px;
+  width: 150px;
+  height: 200px;
   text-align: center;
   cursor: pointer;
 `
 
 const SliderShow = styled.div`
-  width: 70%;
+  width: 60%;
 `
 const TitleCategory = styled.p`
   margin: 50px 0px 25px 10px;

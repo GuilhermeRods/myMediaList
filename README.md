@@ -16,7 +16,7 @@
 
 #### Diagrama do Banco [Dbdiagram.io](https://dbdiagram.io/d/5ec5b08039d18f5553ff874a)
 
-##### Passos para rodar o projeto:
+##### Passos para rodar o back-end:
 
 ##### Passo 1: Instale as dependencias com `yarn`
 

@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
+let itemsName = ['LANÇAMENTOS', 'NOVOS EPISODIOS', 'MELHORES AVALIAÇÕES', 'MAIS ASSISTIDOS']
+
 const SecondaryMenuComponent = () => (
   <Content>
     <MenuItems>
-      <Items href='#'>LANÇAMENTOS</Items>
-      <Items href='#'>NOVOS EPISODIOS</Items>
-      <Items href='#'>MELHOR AVALIADOS</Items>
-      <Items href='#'>MAIS ASSISTIDOS</Items>
+      {itemsName.map((i, index) => (
+        <Items href='#'>{itemsName[index]}</Items>
+      ))}
     </MenuItems>
   </Content>
 )
@@ -21,7 +22,7 @@ const Items = styled.a`
   position: relative;
   letter-spacing: 1.5px;
   padding: 25px 0;
-  color: aliceblue;
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   font-size: 14px;
 
@@ -45,12 +46,17 @@ const Items = styled.a`
     -webkit-transform: translateX(-50%) scaleX(1);
     transform: translateX(-50%) scaleX(1);
   }
+
+  :hover {
+    transition: 0.5s;
+    color: rgba(255, 255, 255);
+  }
 `
 
 const MenuItems = styled.div`
   color: white;
   display: flex;
-  width: 68%;
+  width: 100%;
   justify-content: space-between;
   margin: auto;
 `

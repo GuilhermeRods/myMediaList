@@ -10,8 +10,15 @@ const ROUNDED = 'rounded'
 const ROUND = 'round'
 const REGULAR = 'regular'
 
-const ButtonComponent = ({ type = 'submit', ...props }) => {
-  return <Button type={type} {...props}></Button>
+const ButtonComponent = ({
+  type = 'submit',
+  backgroundColor = '#DC1436',
+  boxShadow = '0 0 30px #dc1436, 0px 0px 0px rgba(220, 20, 54, 50)',
+  ...props
+}) => {
+  return (
+    <Button type={type} backgroundColor={backgroundColor} boxShadow={boxShadow} {...props}></Button>
+  )
 }
 
 const Button = styled.button`
@@ -64,16 +71,16 @@ const Button = styled.button`
   }};
 
   margin: ${(props) => props.marginSize};
-  background: ${(props) => (props.primary ? '#DC1436' : 'none')};
+  background: ${(props) => props.backgroundColor};
   border: ${(props) => (props.primary ? 'none' : '3px solid #F2F2F2')};
   color: #fff;
   box-sizing: border-box;
-
   letter-spacing: 0.5px;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 30px #dc1436, 0px 0px 0px rgba(220, 20, 54, 50);
+    box-shadow: ${(props) => (props.primary ? props.boxShadow : 'none')};
     transition: 1s;
   }
 `

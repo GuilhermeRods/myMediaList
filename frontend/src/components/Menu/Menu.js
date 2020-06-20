@@ -1,30 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import * as Icon from 'react-feather'
 
-const MenuComponet = () => (
-  <Menu>
-    <Logo>
-      <Items>LOGO</Items>
-    </Logo>
-    <MenuItems>
-      <Items>FILMES</Items>
-      <Items>SERIES</Items>
-      <Items>ANIMES</Items>
-    </MenuItems>
-    <Login>
-      <Items>
-        <Icon.LogIn />
-      </Items>
-    </Login>
-  </Menu>
-)
+import { Modal } from '../../components'
+import { Register } from '../../pages'
+
+const MenuComponet = () => {
+  const [isModelVisible, setIsModelVisible] = useState(false)
+
+  return (
+    <Menu>
+      <Logo>
+        <Items>LOGO</Items>
+      </Logo>
+      <MenuItems>
+        <Items>FILMES</Items>
+        <Items>SERIES</Items>
+        <Items>ANIMES</Items>
+      </MenuItems>
+      <Login>
+        <Items>
+          <Icon.LogIn onClick={() => setIsModelVisible(true)} />
+        </Items>
+      </Login>
+      {isModelVisible ? (
+        <Modal onClose={() => setIsModelVisible(false)}>
+          <Register />
+        </Modal>
+      ) : null}
+    </Menu>
+  )
+}
 
 const Menu = styled.div`
   display: flex;
-  height: 5vh;
   align-items: center;
-  padding: 25px 0;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
   color: rgba(255, 255, 255, 0.5);
 `
 

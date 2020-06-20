@@ -1,85 +1,116 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Button, Input } from '../../components'
 import styled from 'styled-components'
 
 const Register = () => {
   const handleRegister = () => {}
+  const handleLogin = () => {}
+
+  const [isRegister, setIsRegister] = useState(false)
 
   return (
     <RegisterConteiner>
-      <Row>
-        <Title>BEM-VINDO AO MYMEDIALIST</Title>
-        <Paragraph>
-          Aqui você pode assistir e gerenciar as series, filmes e animes criando uma lista na qual
-          acompanha o episodio que você se encontra, o que você concluiu e o que pretende assistir.
-        </Paragraph>
-      </Row>
-      <Content>
-        <SubTitle>REGISTRAR</SubTitle>
-        <form onSubmit={handleRegister}>
-          <Input name='email' placeholder='EMAIL' type='email' />
-          <Input name='name' placeholder='NOME' />
-          <Input name='password' placeholder='SENHA' />
-          <Input name='repeatPassword' placeholder='REPITA A SENHA' />
-          <Button
-            width='large'
-            primary
-            height='large'
-            borderRadius='regular'
-            marginSize='10px 0px 0px'
-          >
-            REGISTRAR CONTA
-          </Button>
-          <Button width='large' height='large' borderRadius='regular' marginSize='10px 0px 0px'>
-            LOGIN
-          </Button>
-        </form>
-      </Content>
+      <RegisterForm>
+        {isRegister ? (
+          <form onSubmit={handleRegister}>
+            <SubTitle>REGISTRAR</SubTitle>
+            <Input name='email' placeholder='EMAIL' type='email' />
+            <Input name='name' placeholder='NOME' />
+            <Input name='password' placeholder='SENHA' />
+            <Input name='repeatPassword' placeholder='REPITA A SENHA' />
+            <Button
+              width='large'
+              primary
+              height='large'
+              borderRadius='regular'
+              marginSize='10px 0px 0px'
+            >
+              REGISTRAR CONTA
+            </Button>
+            <Button
+              backgroundColor='none'
+              type='button'
+              width='large'
+              height='large'
+              borderRadius='regular'
+              marginSize='10px 0px 0px'
+              onClick={() => setIsRegister(false)}
+            >
+              LOGIN
+            </Button>
+          </form>
+        ) : (
+          <form onSubmit={handleLogin}>
+            <SubTitle>LOGAR</SubTitle>
+            <Input name='login' placeholder='LOGIN' />
+            <Input name='senha' placeholder='SENHA' />
+            <Button
+              width='large'
+              primary
+              height='large'
+              borderRadius='regular'
+              marginSize='10px 0px 0px'
+            >
+              LOGAR
+            </Button>
+            <Button
+              backgroundColor='none'
+              primary
+              width='large'
+              height='small'
+              boxShadow='none'
+              marginSize='10px 0px 0px'
+            >
+              Esqueci minha senha
+            </Button>
+            <Button
+              width='large'
+              primary
+              height='large'
+              borderRadius='regular'
+              marginSize='10px 0px 0px'
+              backgroundColor='#184573'
+              boxShadow='none'
+            >
+              LOGAR COM FACEBOOK
+            </Button>
+            <Button
+              backgroundColor='none'
+              type='button'
+              width='large'
+              height='large'
+              borderRadius='regular'
+              marginSize='10px 0px 0px'
+              onClick={() => setIsRegister(true)}
+            >
+              REGISTRAR
+            </Button>
+          </form>
+        )}
+      </RegisterForm>
     </RegisterConteiner>
   )
 }
 
 const RegisterConteiner = styled.div`
-  background-color: rgba(1, 1, 19, 0.9);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
+  background-color: rgba(6, 11, 26, 0.9);
   align-items: center;
   justify-content: center;
 `
-const Content = styled.div`
-  height: 480px;
-  width: 500px;
+const RegisterForm = styled.div`
+  width: 30%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 `
-const Row = styled.div``
 
 const SubTitle = styled.h2`
-  height: 47px;
-  width: 162px;
   color: #f2f2f2;
-  font-family: 'Roboto';
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 35px;
-  font-weight: bold;
-`
-
-const Title = styled.h1`
-  height: 61px;
-  width: 657px;
-  color: #f2f2f2;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 35px;
-`
-const Paragraph = styled.p`
-  height: 360.48px;
-  width: 657px;
-  color: #f2f2f2;
-  font-size: 20px;
-  font-style: italic;
-  line-height: 29px;
 `
 
 export default Register

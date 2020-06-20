@@ -1,4 +1,9 @@
 # myMediaList
+
+<h1 align="center">
+  <img alt="interface" title="interface" src="assets/interface.jpg" width='800px'>
+</h1>
+
 #### Projeto do site que tem como proposta um ranking de séries, filmes e animes, baseado no rating dos usuários. Há também uma lista de favoritos do usuário e uma área para ver as midias.
 
 #### Back-end do projeto feito com Nodejs, utilizando [Koajs](https://koajs.com/), [Postgres](https://www.postgresql.org/), [Knex](http://knexjs.org/#Installation-node) e testes com [Jest](https://jestjs.io/pt-BR/) e [Supertest](https://github.com/visionmedia/supertest). Fluxo de dados explicado [aqui](https://whimsical.com/6DcaGVNzinjE8fXvE42AUv).
@@ -6,9 +11,10 @@
 #### Front-end com [React](https://pt-br.reactjs.org/), [Styled-components](https://styled-components.com/docs/basics).
 
 #### Trello do projeto: [Trello](https://trello.com/b/g5JLhrEs/mymidialist-sprint-1)
-#### Telas do projeto: [Desktop](https://wesley739884.invisionapp.com/prototype/ck9efkmdw008ol50112om3y6f/play)
-#### Diagrama do Banco [Dbdiagram.io](https://dbdiagram.io/d/5ec5b08039d18f5553ff874a)
 
+#### Telas do projeto: [Desktop](https://wesley739884.invisionapp.com/prototype/ck9efkmdw008ol50112om3y6f/play)
+
+#### Diagrama do Banco [Dbdiagram.io](https://dbdiagram.io/d/5ec5b08039d18f5553ff874a)
 
 ##### Passos para rodar o projeto:
 

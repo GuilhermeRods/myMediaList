@@ -84,6 +84,36 @@ export const animeCron = async () => {
   await Promise.all(
     medias.map(async media => {
       media.map(async anime => {
+        const categories = await axios.get(
+          `${ANIME_API_URL}/anime/${anime.media_api_id}/genres`
+        )
+        await categories.data.data.map(async category => {
+          const categoriesWithMediaExist = await connectionDev("media_genres")
+            .select("id")
+            .where({ genre_api_id: category.id })
+            .andWhere({ media_id: anime.id })
+            .first()
+
+          if (categoriesWithMediaExist) {
+            await connectionDev("media_genres")
+              .update({ genre_api_id: category.id, media_id: anime.id })
+              .where({ genre_api_id: category.id })
+              .andWhere({ media_id: anime.id })
+          } else {
+            await connectionDev("media_genres").insert({
+              genre_api_id: category.id,
+              media_id: anime.id,
+              media_api_id: anime.media_api_id
+            })
+          }
+        })
+      })
+    })
+  )
+
+  await Promise.all(
+    medias.map(async media => {
+      media.map(async anime => {
         const episodes = await axios
           .get(`${ANIME_API_URL}/anime/${anime.media_api_id}/episodes`)
           .catch(err => console.log(err))

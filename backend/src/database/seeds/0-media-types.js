@@ -4,7 +4,7 @@ import moment from 'moment'
 export const seed = async knex => {
   const mediaTypes = [
     {
-      id: uuidv4(),
+      id: '795177df-344e-4cde-8db2-c04c47bf459b',
       type: 'anime',
       created_at: moment.utc(),
       updated_at: moment.utc()

@@ -26,7 +26,7 @@
 
 ##### Passo 4: Para rodar o server `yarn dev`
 
-#### Estrutura de pastas
+#### Estrutura de pastas back-end
 
 ```
 ├── /src

@@ -24,7 +24,13 @@
 
 ##### Passo 3: Adicione uma extensão no postgres `CREATE EXTENSION 'uuid-ossp'`
 
-##### Passo 4: Para rodar o server `yarn dev`
+##### Passo 4: Para rodar as migrations `yarn knex migrate:latest`
+
+#### Passo 5: Para rodar as seeds `ỳarn knex seed:run`
+
+#### Passo 6: Rodar o server `yarn dev`
+
+#### Passo 7: Rodar a cron: Vá no server.js e mude a função `cron.schedule` para `cron.schedule('* * * * * *', animeCron)` 
 
 #### Estrutura de pastas back-end
 

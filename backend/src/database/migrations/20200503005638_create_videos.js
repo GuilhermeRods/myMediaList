@@ -4,7 +4,6 @@ export const up = knex =>
     table.string("episode_api_id")
     table.string("title")
     table.integer("video_number").notNullable()
-    table.timestamps(true, true)
     table.timestamp("deleted_at")
     table.string("image")
     table.text("description")
@@ -12,9 +11,10 @@ export const up = knex =>
 
     table.uuid("media_id").notNullable()
     table.integer("media_api_id")
+    table.timestamps(true, true)
     table.foreign("media_api_id").references("media_api_id").inTable("medias")
 
     table.foreign("media_id").references("id").inTable("medias")
   })
 
-export const down = knex => knex.schema.dropTable("videos")
+export const down = knex => knex.schema.dropTableIfExists("videos")

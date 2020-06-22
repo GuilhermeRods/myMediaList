@@ -6,4 +6,4 @@ export const up = knex =>
     table.timestamp("deleted_at")
   })
 
-export const down = knex => knex.schema.dropTable("media_types")
+export const down = knex => knex.schema.dropTableIfExists("media_types")

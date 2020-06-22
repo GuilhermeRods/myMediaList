@@ -7,4 +7,4 @@ export const up = knex =>
     table.timestamp("deleted_at")
   })
 
-export const down = knex => knex.schema.dropTable("seasons")
+export const down = knex => knex.schema.dropTableIfExists("seasons")

@@ -8,4 +8,4 @@ export const up = knex =>
     table.timestamp("deleted_at")
   })
 
-export const down = knex => knex.schema.dropTable("users")
+export const down = knex => knex.schema.dropTableIfExists("users")

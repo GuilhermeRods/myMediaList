@@ -13,4 +13,4 @@ export const up = knex =>
     table.foreign("media_id").references("id").inTable("medias")
   })
 
-export const down = knex => knex.schema.dropTable("user_medias")
+export const down = knex => knex.schema.dropTableIfExists("user_medias")

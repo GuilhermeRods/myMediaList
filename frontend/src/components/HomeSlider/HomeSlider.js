@@ -13,7 +13,7 @@ const HomeSliderComponent = () => {
     slidesToShow: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    arrows: false
+    arrows: true
   }
 
   const Medias = [
@@ -41,16 +41,16 @@ const HomeSliderComponent = () => {
   return (
     <HomeSlider>
       <Slider {...settings}>
-        {Medias.map((i) => (
-          <div>
+        {Medias.map((medias, i) => (
+          <div key={i}>
             <Info>
               <InfoDetails>
                 <span>
-                  <Title>{i.name}</Title>
+                  <Title>{medias.name}</Title>
                 </span>
                 <span>
-                  <SubTitle>{i.year}</SubTitle>
-                  <SubTitle>{i.season}ª TEMP</SubTitle>
+                  <SubTitle>{medias.year}</SubTitle>
+                  <SubTitle>{medias.season}ª TEMP</SubTitle>
                   <Rating />
                 </span>
                 <span>
@@ -69,7 +69,7 @@ const HomeSliderComponent = () => {
                 </span>
               </InfoDetails>
             </Info>
-            <Image src={i.image} />
+            <Image src={medias.image} />
           </div>
         ))}
       </Slider>

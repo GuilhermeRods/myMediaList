@@ -1,17 +1,12 @@
-import React from 'react'
 import { FaRegTimesCircle } from 'react-icons/fa'
+import styled from 'styled-components'
 
-const CloseIcon = ({
-  color,
-  position = 'absolute',
-  right,
-  left,
-  top,
-  bottom,
-  cursor = 'pointer',
-  ...props
-}) => {
-  return <FaRegTimesCircle style={{ position, right, top, cursor }} color={color} {...props} />
-}
+const CloseIcon = styled(FaRegTimesCircle)`
+  position: absolute;
+  cursor: pointer;
+  color: ${(props) => props.color};
+  right: ${(props) => props.right};
+  top: ${(props) => props.top};
+`
 
 export default CloseIcon

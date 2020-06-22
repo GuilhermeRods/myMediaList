@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Register, Login, Home, Teste } from './pages'
+import { Register, Login, Home, Teste } from './pages/index'
 
 const IsNotAuthenticated = () => (
   <Router>

@@ -10,9 +10,9 @@ export const up = knex =>
     table.datetime("airdate")
 
     table.uuid("media_id").notNullable()
-    table.integer("media_api_id")
+    // table.integer("media_api_id")
     table.timestamps(true, true)
-    table.foreign("media_api_id").references("media_api_id").inTable("medias")
+    // table.foreign("media_api_id").references("media_api_id").inTable("medias")
 
     table.foreign("media_id").references("id").inTable("medias")
   })

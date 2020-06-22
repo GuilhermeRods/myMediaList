@@ -1,13 +1,13 @@
 export const up = knex =>
   knex.schema.createTable("medias", table => {
     table.uuid("id").defaultTo(knex.raw("uuid_generate_v4()")).primary()
-    table.integer("media_api_id").unique()
+    table.integer("media_api_id").notNullable()
     table.string("title").notNullable()
     table.text("description").notNullable()
     table.string("slug_title").notNullable()
     table.integer("total_rating")
     table.string("image_poster")
-    table.string("image_cover")
+    table.text("image_cover")
     table.string("youtube_id")
     table.datetime("start_date")
     table.datetime("end_date")

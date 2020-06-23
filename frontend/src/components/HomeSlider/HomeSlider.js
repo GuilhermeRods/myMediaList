@@ -31,9 +31,8 @@ const HomeSliderComponent = () => {
       season: '2'
     },
     {
-      image:
-        'https://p.ecopetit.cat/wpic/lpic/343-3431860_minimalist-haikyuu-desktop-wallpaper-hd.png',
-      name: 'HAIKYUUUU!',
+      image: 'https://livedoor.blogimg.jp/ponpokonwes/imgs/e/6/e6e2a8a8.jpg',
+      name: 'BAKI GRAPPLER',
       year: '2021',
       season: '3'
     }
@@ -79,7 +78,6 @@ const HomeSliderComponent = () => {
 }
 
 const HomeSlider = styled.div`
-  position: relative;
   overflow: hidden;
   justify-content: center;
 
@@ -89,7 +87,7 @@ const HomeSlider = styled.div`
 `
 
 const Image = styled.img`
-  background-size: cover center;
+  background-size: cover center center;
   max-width: 100vw;
   min-width: 100vw;
   min-height: 800px;

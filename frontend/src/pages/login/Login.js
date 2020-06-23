@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { Register } from '../../pages'
 import styled from 'styled-components'
 import { Button, Modal } from '../../components'

@@ -23,11 +23,11 @@ const MenuComponet = () => {
           <Icon.LogIn onClick={() => setIsModelVisible(true)} />
         </Items>
       </Login>
-      {isModelVisible ? (
+      {isModelVisible && (
         <Modal onClose={() => setIsModelVisible(false)}>
           <Register />
         </Modal>
-      ) : null}
+      )}
     </Menu>
   )
 }

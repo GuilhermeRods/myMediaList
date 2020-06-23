@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Menu, Line, HomeSlider } from '../../components'
 import styled from 'styled-components'
 import { SecondaryMenu, Modal } from '../../components'
@@ -6,7 +6,6 @@ import { SecondaryMenu, Modal } from '../../components'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { useState } from 'react'
 
 const Home = () => {
   const animesImg = [
@@ -134,8 +133,8 @@ const Home = () => {
           <SliderShow>
             <TitleCategory>ANIMES</TitleCategory>
             <Slider {...settings}>
-              {animesImg.map((anime) => (
-                <Card keyonClick={() => setIsModelVisible(true)}>
+              {animesImg.map((anime, i) => (
+                <Card key={i} keyonClick={() => setIsModelVisible(true)}>
                   <Overlap>
                     <Info>
                       <InfoTitle>{anime.name}</InfoTitle>
@@ -155,8 +154,8 @@ const Home = () => {
           <SliderShow>
             <TitleCategory>FILMES</TitleCategory>
             <Slider {...settings}>
-              {moviesImg.map((movie) => (
-                <Card>
+              {moviesImg.map((movie, i) => (
+                <Card key={i}>
                   <Overlap>
                     <Info>
                       <InfoTitle>{movie.name}</InfoTitle>
@@ -173,7 +172,7 @@ const Home = () => {
             </Slider>
           </SliderShow>
         </span>
-        {isModelVisible ? <Modal onClose={() => setIsModelVisible(false)}></Modal> : null}
+        {isModelVisible && <Modal onClose={() => setIsModelVisible(false)}></Modal>}
       </Section>
     </HomeContent>
   )
@@ -224,7 +223,9 @@ const TitleCategory = styled.p`
   color: white;
 `
 
-const Card = styled.div``
+const Card = styled.div`
+  width: 180px;
+`
 
 const Overlap = styled.div`
   display: flex;

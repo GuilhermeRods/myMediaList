@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-let itemsName = ['LANÇAMENTOS', 'NOVOS EPISODIOS', 'MELHORES AVALIAÇÕES', 'MAIS ASSISTIDOS']
+const itemsName = ['LANÇAMENTOS', 'NOVOS EPISODIOS', 'MELHORES AVALIAÇÕES', 'MAIS ASSISTIDOS']
 
 const SecondaryMenuComponent = () => (
   <Content>
     <MenuItems>
-      {itemsName.map((i, index) => (
-        <Items href='#'>{itemsName[index]}</Items>
+      {itemsName.map((index, i) => (
+        <Items key={i} href='#'>
+          {itemsName[index]}
+        </Items>
       ))}
     </MenuItems>
   </Content>

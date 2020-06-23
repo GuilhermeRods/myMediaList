@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import * as Icon from 'react-feather'
 
+import * as logo from '../../assets/logo.png'
 import { Modal } from '../../components'
 import { Register } from '../../pages'
 
@@ -11,7 +12,9 @@ const MenuComponet = () => {
   return (
     <Menu>
       <Logo>
-        <Items>LOGO</Items>
+        <Items>
+          <img src={logo} alt='LOGO' />
+        </Items>
       </Logo>
       <MenuItems>
         <Items>FILMES</Items>

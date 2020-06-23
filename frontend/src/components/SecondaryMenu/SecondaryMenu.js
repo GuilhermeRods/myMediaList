@@ -8,7 +8,7 @@ const SecondaryMenuComponent = () => (
     <MenuItems>
       {itemsName.map((index, i) => (
         <Items key={i} href='#'>
-          {itemsName[index]}
+          {itemsName[i]}
         </Items>
       ))}
     </MenuItems>

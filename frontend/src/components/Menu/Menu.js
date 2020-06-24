@@ -6,7 +6,7 @@ import { Modal } from '../../components'
 import { Register } from '../../pages'
 
 const MenuComponet = () => {
-  const [isModelVisible, setIsModelVisible] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
   return (
     <Menu>
@@ -20,11 +20,11 @@ const MenuComponet = () => {
       </MenuItems>
       <Login>
         <Items>
-          <Icon.LogIn onClick={() => setIsModelVisible(true)} />
+          <Icon.LogIn onClick={() => setIsModalVisible(true)} />
         </Items>
       </Login>
-      {isModelVisible && (
-        <Modal onClose={() => setIsModelVisible(false)}>
+      {isModalVisible && (
+        <Modal onClose={() => setIsModalVisible(false)}>
           <Register />
         </Modal>
       )}

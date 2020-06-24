@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Menu, Line, HomeSlider } from '../../components'
 import styled from 'styled-components'
-import { SecondaryMenu, Modal } from '../../components'
+import { MenuSecondary, Modal } from '../../components'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 const Home = () => {
-  const animesImg = [
+  const animes = [
     {
       name: 'BOKU NO HERO',
       category: 'Luta, Aventura',
@@ -62,7 +62,7 @@ const Home = () => {
     }
   ]
 
-  const moviesImg = [
+  const movies = [
     {
       name: 'KIMI NI NA WA',
       category: 'Luta, Aventura',
@@ -116,7 +116,7 @@ const Home = () => {
     centerMode: true
   }
 
-  const [isModelVisible, setIsModelVisible] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
   return (
     <HomeContent>
@@ -129,12 +129,12 @@ const Home = () => {
       </Header>
       <Section>
         <span>
-          <SecondaryMenu />
+          <MenuSecondary />
           <SliderShow>
             <TitleCategory>ANIMES</TitleCategory>
             <Slider {...settings}>
-              {animesImg.map((anime, i) => (
-                <Card key={i} keyonClick={() => setIsModelVisible(true)}>
+              {animes.map((anime, i) => (
+                <Card key={i} onClick={() => setIsModalVisible(true)}>
                   <Overlap>
                     <Info>
                       <InfoTitle>{anime.name}</InfoTitle>
@@ -154,8 +154,8 @@ const Home = () => {
           <SliderShow>
             <TitleCategory>FILMES</TitleCategory>
             <Slider {...settings}>
-              {moviesImg.map((movie, i) => (
-                <Card key={i}>
+              {movies.map((movie, i) => (
+                <Card key={i} onClick={() => setIsModalVisible(true)}>
                   <Overlap>
                     <Info>
                       <InfoTitle>{movie.name}</InfoTitle>
@@ -172,7 +172,11 @@ const Home = () => {
             </Slider>
           </SliderShow>
         </span>
-        {isModelVisible && <Modal onClose={() => setIsModelVisible(false)}></Modal>}
+        {isModalVisible && (
+          <Modal onClose={() => setIsModalVisible(false)}>
+            <Background src={movies[1].img}></Background>
+          </Modal>
+        )}
       </Section>
     </HomeContent>
   )
@@ -277,5 +281,8 @@ const Image = styled.img`
   text-align: center;
   cursor: pointer;
 `
-
+const Background = styled.img`
+  width: 100%;
+  background-position: center;
+`
 export default Home
